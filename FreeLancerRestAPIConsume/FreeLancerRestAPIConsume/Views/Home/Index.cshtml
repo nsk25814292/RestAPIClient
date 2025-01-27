@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FreeLancerRestAPIConsume.Models.Users>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <h4>User List</h4>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillSet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </th>
+        <th>
+           Select
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Freelancer_User_Id)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillSet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hobbies)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Freelancer_User_Id)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                @Html.ActionLink("Search", "Search", new { id = item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserId }) 
+            </td>
+        </tr>
+    }
+
+</table>
